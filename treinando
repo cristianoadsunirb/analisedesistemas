@@ -1,0 +1,22 @@
+import javax.swing.JOptionPane;  
+public class Conversao{  
+    public static void main(String args[]){  
+          
+        String rec;  
+        int cont=0;  
+        int vet[];  
+          
+        rec = JOptionPane.showInputDialog(null,"Digite somente numeros para efetuar a conversão sem a utilização das funções JAVA","Conversão sem Funcões Java", JOptionPane.QUESTION_MESSAGE);  
+        vet= new int[rec.length()];  
+          
+            for(cont=0;cont<rec.length();cont++){  
+                      
+                int inteiro =rec.charAt(cont);  
+                      
+                    vet[cont]=inteiro;  
+                }  
+        JOptionPane.showMessageDialog(null,"o valor inteiro é: "+vet);  
+          
+        }  
+          
+        }
