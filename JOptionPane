@@ -20,3 +20,59 @@ public class Conversao{
         }  
           
         }
+        
+        ________________________________________________________________________________
+        
+        Outro exemplo
+        
+        import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+public class JOPtionPane {
+	public static void main(String[] args){
+		//integers
+		byte x;
+		short y;
+		int z;
+		long u;
+		//decimal
+		float v;
+		double w;
+		
+		char t;
+		boolean status;
+		
+		Scanner keyboard = new Scanner(System.in);
+		
+		System.out.println("Enter a whole number");
+		x=keyboard.nextByte();
+		System.out.println("Enter a whole number");
+		y=keyboard.nextShort();
+		System.out.println("Enter a whole number");
+		z=keyboard.nextInt();
+		System.out.println("Enter a whole number");
+		u=keyboard.nextLong();
+		System.out.println("Enter a decimal number");
+		v=keyboard.nextFloat();
+		System.out.println("Enter a decimal number");
+		w=keyboard.nextDouble();
+		System.out.println("Enter a character"); 
+		t=keyboard.next().charAt(0);
+		System.out.println("Enter True/False");
+		status=keyboard.nextBoolean();
+		
+	
+		
+		JOptionPane.showMessageDialog(null, "The byte is " +x+
+				"\n" + "The short is " +y+
+				"\n"+"The int is " +z+
+				"\n"+"The long is " +u+
+				"\n"+"The float is " +v+
+				"\n"+"The double is " +w+
+				"\n"+"The character is " + t+
+				"\n"+"The boolean is " + status
+				);
+	
+	}
+	
+}
