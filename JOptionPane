@@ -76,3 +76,35 @@ public class JOPtionPane {
 	}
 	
 }
+
+________________________________________________________________________________________________________________
+
+import javax.swing.*; 
+public class Nac01_questao01 { 
+public static void main(String arg[]) 
+{ 
+double valor_fin, valor_parc, valor_parc_juros, taxa, soma=0; 
+int num_parc; 
+
+valor_fin = Double.parseDouble(JOptionPane.showInputDialog("Valor financiado:")); 
+taxa = Double.parseDouble(JOptionPane.showInputDialog("Taxa de juros:")); 
+num_parc = Integer.parseInt(JOptionPane.showInputDialog("Nº Parcelas:")); 
+
+valor_parc = valor_fin / num_parc; 
+
+System.out.println("Valor financiado: " + valor_fin); 
+System.out.println("Número de parcelas: " + num_parc); 
+
+for (int j=0;j<num_parc;j++) { 
+valor_parc_juros = (valor_parc + valor_parc*taxa/100); 
+soma += valor_parc_juros; 
+taxa = taxa - taxa*0.01; 
+System.out.println ("Parcela " + (j+1) + ":" + valor_parc_juros); 
+} 
+System.out.println ("Total do financiamento: " + soma); 
+} 
+}
+
+____________________________________________________________________________________________________________
+
+
