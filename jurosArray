@@ -1,0 +1,35 @@
+import javax.swing.*;  
+class SistemaComercial  
+{  
+    public static void main(String args[])  
+    {  
+        String a = "";  
+        double taxaJuros = 0, valor = 0, jurosDia = 2;  
+        double calc1, calc2, calc3;  
+        int diaAtraso = 0, qtdeParcela = 0, x;  
+  
+        a = JOptionPane.showInputDialog (null, "Entre com o valor da compra: "<img src="http://javafree.uol.com.br/forum/images/smiles/icon_wink.gif">;  
+        valor = Double.parseDouble(a);  
+  
+        a = JOptionPane.showInputDialog (null, "Entre com a quantidade de parcelas: "<img src="http://javafree.uol.com.br/forum/images/smiles/icon_wink.gif">;  
+        qtdeParcela = Integer.parseInt(a);  
+  
+        a = JOptionPane.showInputDialog (null, "Entre com a taxa de juros: "<img src="http://javafree.uol.com.br/forum/images/smiles/icon_wink.gif">;  
+        taxaJuros = Double.parseDouble(a);  
+  
+        a = JOptionPane.showInputDialog (null, "Entre com a quantidade de dias em atraso: "<img src="http://javafree.uol.com.br/forum/images/smiles/icon_wink.gif">;  
+        diaAtraso = Integer.parseInt(a);  
+  
+        calc1 = valor + (valor * taxaJuros / 100);  
+        calc2 = calc1 / qtdeParcela;  
+                          
+        a = "";  
+          
+        for (x = 1; x <= qtdeParcela;x++)  
+        {  
+            a  = a + "Parcela  " + x + " = "+ calc2 +"\n";  
+        }  
+          
+        JOptionPane.showMessageDialog(null, ""+  a + "\n"<img src="http://javafree.uol.com.br/forum/images/smiles/icon_wink.gif">;  
+    }  
+}
