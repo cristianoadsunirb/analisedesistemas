@@ -1,0 +1,104 @@
+Exemplo prático de Java usando switch, if e do..while para validação
+Uma empresa que trabalha com vendas a prazo precisa de um programa que simule o valor das parcelas de um determinado valor, com juros que variam de acordo com o número de prestações e o valor do produto conforme referência abaixo:
+a. 6 parcelas sem juros
+b. 12 parcelas  com juros de 1% (somente para compras acima de R$ 500,00)
+c. 18 parcelas com juros de 1,5% (somente para compras acima de R$ 1000,00)
+d. 24 parcelas com juros de 2% (somente para compras acima de R$ 2000,00)
+Crie um programa que leia o valor da venda, apresente um menu com as opções de parcelamento para esta venda e simule o valor das prestações.
+
+Código Java
+
+//Autor; Thiago Campos
+//Data: 23.08.2012
+
+import javax.swing.JOptionPane;
+
+public class Vendas {
+
+    public static void main(String[] args) {
+        //variaveis
+        double venda; //valor da venda
+        int m = 0; //menu de opções
+
+        do { //simulaçao
+            venda = Double.parseDouble(JOptionPane.showInputDialog("Informe o valor da venda para a simulação:"));
+
+            if (venda <= 500) {
+                do { //validação
+                    m = Integer.parseInt(JOptionPane.showInputDialog("Informe a forma de Pagamento:"
+                            + "\n1-Pagamento em 6 vezes"
+                            + "\n2-Sair"));
+                    if (m == 2) {
+                        m += 3;
+                    } //para sair
+                } while (m < 0 && m > 2);
+            } else {
+                if (venda > 500 && venda <= 1000) {
+                    do { //validação
+                        m = Integer.parseInt(JOptionPane.showInputDialog("Informe a forma de Pagamento:"
+                                + "\n1-Pagamento em 6 vezes"
+                                + "\n2-Pagamento em 12 vezes"
+                                + "\n3-Sair"));
+                        if (m == 3) {
+                            m += 2;
+                        } //para sair
+                    } while (m < 0 && m > 3);
+                } else {
+                    if (venda > 1000 && venda <= 2000) {
+                        do { //validação
+                            m = Integer.parseInt(JOptionPane.showInputDialog("Informe a forma de Pagamento:"
+                                    + "\n1-Pagamento em 6 vezes"
+                                    + "\n2-Pagamento em 12 vezes"
+                                    + "\n3-Pagamento em 18 vezes"
+                                    + "\n4-Sair"));
+                            if (m == 4) {
+                                m += 1;
+                            } //para sair
+                        } while (m < 0 && m > 4);
+                    } else {
+                        if (venda > 2000) {
+                            do { //validação
+                                m = Integer.parseInt(JOptionPane.showInputDialog("Informe a forma de Pagamento:"
+                                        + "\n1-Pagamento em 6 vezes"
+                                        + "\n2-Pagamento em 12 vezes"
+                                        + "\n3-Pagamento em 18 vezes"
+                                        + "\n4-Pagamento em 24 vezes"
+                                        + "\n5-Sair"));
+                            } while (m < 0 && m > 5);
+                        } //fim do if
+                    } //fim do else 3
+                } //fim do else 2
+            } //fim do else 1
+
+            switch (m) {
+                case 1:
+                    JOptionPane.showMessageDialog(null, "OPÇÃO 1: (SIMULAÇÃO)\n"
+                            + "Pagamento em 6x - SEM JUROS:"
+                            + "\n6 parcelas de " + (venda / 6));
+                    break;
+                case 2:
+                    JOptionPane.showMessageDialog(null, "OPÇÃO 2: (SIMULAÇÃO)\n"
+                            + "Pagamento em 12x:"
+                            + "\n12 parcelas de " + (venda*1.01 / 12));
+                    break;
+                case 3:
+                    JOptionPane.showMessageDialog(null, "OPÇÃO 3: (SIMULAÇÃO)\n"
+                            + "Pagamento em 18x:"
+                            + "\n18 parcelas de " + (venda*1.015 / 18));
+                    break;
+                case 4:
+                    JOptionPane.showMessageDialog(null, "OPÇÃO 4: (SIMULAÇÃO)\n"
+                            + "Pagamento em 24x:"
+                            + "\n24 parcelas de " + (venda*1.02 / 24));
+                    break;
+                case 5:
+                    JOptionPane.showMessageDialog(null, "Opção Sair!");
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Opção Invalida!");
+                    break;
+            }
+        } while (m != 5);
+
+    } //fim do main
+} //fim da classe
